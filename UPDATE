@@ -1,0 +1,17 @@
+------------------------------------------------------------------
+UPDATE book
+SET price = 0.9 * price
+WHERE amount IN (5,10);
+
+------------------------------------------------------------------
+UPDATE book
+SET buy = IF(buy>amount, amount, buy),
+    price = IF(buy = 0, price * 0.9, price);
+
+------------------------------------------------------------------
+UPDATE book, supply
+SET book.amount = book.amount + supply.amount,
+    book.price = ROUND((book.price+supply.price)/2, 2)
+WHERE book.title = supply.title AND book.author = supply.author;
+
+------------------------------------------------------------------
