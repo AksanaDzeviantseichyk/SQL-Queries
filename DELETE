@@ -1,0 +1,24 @@
+-------------------------------------------------------------
+DELETE FROM supply
+WHERE author IN (SELECT author
+                 FROM book
+                 WHERE amount >= 10);
+                 
+-------------------------------------------------------------
+DELETE FROM fine
+WHERE date_violation < '2020-02-01';
+
+-------------------------------------------------------------
+DELETE FROM author
+WHERE author_id IN (SELECT author_id
+                 FROM book
+                 GROUP BY author_id
+                 HAVING SUM(amount) < 20);
+                 
+-------------------------------------------------------------
+DELETE FROM genre
+WHERE genre_id IN (SELECT genre_id
+                 FROM book
+                 GROUP BY genre_id
+                 HAVING count(genre_id)<4);
+-------------------------------------------------------------

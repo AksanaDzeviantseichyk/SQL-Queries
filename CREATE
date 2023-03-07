@@ -1,3 +1,4 @@
+----------------------------------------------------------------------
 CREATE TABLE book (
     book_id	INT PRIMARY KEY AUTO_INCREMENT,
     title	VARCHAR(50),
@@ -5,3 +6,11 @@ CREATE TABLE book (
     price	DECIMAL(8, 2),
     amount	INT
 );
+
+----------------------------------------------------------------------
+CREATE TABLE ordering AS
+SELECT author, title, (SELECT ROUND(AVG(amount)) FROM book) AS amount
+FROM book
+WHERE amount < (SELECT ROUND(AVG(amount)) FROM book);
+
+----------------------------------------------------------------------
