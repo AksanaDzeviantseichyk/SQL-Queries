@@ -1,17 +1,17 @@
 --------------------------------------------------------------
 
 INSERT INTO supply (title, author, price, amount)
-VALUES ('Лирика',	'Пастернак Б.Л.',	518.99,	2),
-       ('Черный человек', 	'Есенин С.А.',	570.20,	6),
-       ('Белая гвардия',	'Булгаков М.А.',	540.50,	7),
-       ('Идиот',	'Достоевский Ф.М.',	360.80,	3);
+VALUES ('Lyrics',	'Pasternak B.L.',	518.99,	2),
+       ('Black Person', 	'Esenin S.A.',	570.20,	6),
+       ('White guard',	'Bulgakov M.A.',	540.50,	7),
+       ('Idiot',	'Dostoevski F.M.',	360.80,	3);
 
 --------------------------------------------------------------
 
 INSERT INTO book (title, author, price, amount)
 SELECT title, author, price, amount
 FROM supply
-WHERE author <> 'Булгаков М.А.' AND author <> 'Достоевский Ф.М.';
+WHERE author <> 'Bulgakov M.A.' AND author <> 'Dostoevski F.M.';
 
 --------------------------------------------------------------
 
