@@ -22,7 +22,7 @@
 * In the book table, you need to adjust the value for the buyer in the buy column so that it does not exceed the number of book copies specified in the amount column. And the price of those books that the buyer did not order, reduce by 10%.
 * For those books in the book table that are in the supply table, not only increase their number in the book table (increase their number by the value of the amount column in the supply table), but also recalculate their price (for each book, find the sum of prices from the book and supply tables and divide by 2).
 
-### 4. Requests for deletion
+### 4. Requests for deletion (DELETE)
 * Remove from the supply table the books of those authors whose total number of book copies in the book table exceeds 10.
 * Remove from the fine table information about violations committed before February 1, 2020.
 * Delete all authors and all their books whose total number of books is less than 20.
