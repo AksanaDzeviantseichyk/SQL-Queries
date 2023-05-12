@@ -4,4 +4,5 @@ SELECT
     name AS 'position name', rate
 FROM employee
 INNER JOIN position
-ON project_id = position.id;
+ON position_id = position.id
+WHERE project_id IS NULL;
