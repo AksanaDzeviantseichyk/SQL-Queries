@@ -1,8 +1,5 @@
 USE companydb;
 SELECT 
-    employee.id, first_name + ' ' + last_name AS 'full name',
-    name AS 'position name', rate
+    employee.id, first_name, last_name, position_id, project_id
 FROM employee
-INNER JOIN position
-ON position_id = position.id
 WHERE project_id IS NULL;
