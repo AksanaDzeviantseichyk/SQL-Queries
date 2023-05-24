@@ -14,7 +14,7 @@ FROM employee emp
 	LEFT JOIN equipment eq ON eq.user_id = emp.id
 GROUP BY emp.project_id
 
-SELECT Distinct
+SELECT
 	CONCAT(emp.first_name, ' ', emp.last_name) AS 'employee full name', 
     pr.name AS 'project name',
     (pr.max_sum_rate - pos.sum_rate - eq.sum_price/12) AS difference
